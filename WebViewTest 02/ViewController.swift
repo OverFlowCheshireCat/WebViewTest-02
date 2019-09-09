@@ -10,6 +10,8 @@ class ViewController: UIViewController, UISearchBarDelegate, WKNavigationDelegat
     @IBOutlet weak var backBtn: UIBarButtonItem!
     @IBOutlet weak var forwardBtn: UIBarButtonItem!
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,12 +38,17 @@ class ViewController: UIViewController, UISearchBarDelegate, WKNavigationDelegat
     }
     
     public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        indicator.isHidden = false
+        indicator.startAnimating()
+        
         backBtn.isEnabled = webView.canGoBack
         forwardBtn.isEnabled = webView.canGoForward
     }
     
-    
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        indicator.isHidden = true
+        indicator.stopAnimating()
+        
         backBtn.isEnabled = webView.canGoBack
         forwardBtn.isEnabled = webView.canGoForward
     }

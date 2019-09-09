@@ -26,6 +26,10 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fIy-lq-Ug4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-SJ-DmF">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -38,10 +42,9 @@
                                     <barButtonItem systemItem="fastForward" id="itB-hR-f04"/>
                                 </items>
                             </toolbar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fIy-lq-Ug4">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fwt-XH-uPz">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -49,12 +52,16 @@
                             <constraint firstItem="pxF-Ey-yUQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5hZ-7U-ePy"/>
                             <constraint firstItem="fIy-lq-Ug4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9fM-ak-ZSf"/>
                             <constraint firstItem="dWG-SJ-DmF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DjX-M4-Zze"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fwt-XH-uPz" secondAttribute="trailing" constant="169" id="GPD-Q0-ndg"/>
                             <constraint firstItem="dWG-SJ-DmF" firstAttribute="top" secondItem="pxF-Ey-yUQ" secondAttribute="bottom" id="K8p-NZ-JQy"/>
                             <constraint firstItem="pxF-Ey-yUQ" firstAttribute="top" secondItem="fIy-lq-Ug4" secondAttribute="bottom" id="Y4x-lC-fwp"/>
                             <constraint firstItem="fIy-lq-Ug4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="brZ-Tl-ePG"/>
+                            <constraint firstItem="Fwt-XH-uPz" firstAttribute="top" secondItem="fIy-lq-Ug4" secondAttribute="bottom" constant="239" id="fJU-fI-T6B"/>
                             <constraint firstItem="dWG-SJ-DmF" firstAttribute="top" secondItem="pxF-Ey-yUQ" secondAttribute="bottom" id="hLs-pD-xfT"/>
                             <constraint firstItem="fIy-lq-Ug4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="igG-uu-EVF"/>
+                            <constraint firstItem="dWG-SJ-DmF" firstAttribute="top" secondItem="Fwt-XH-uPz" secondAttribute="bottom" constant="271" id="pFl-af-5sL"/>
                             <constraint firstItem="pxF-Ey-yUQ" firstAttribute="top" secondItem="fIy-lq-Ug4" secondAttribute="bottom" id="qGW-Qj-zRm"/>
+                            <constraint firstItem="Fwt-XH-uPz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="169" id="qiL-J2-oQA"/>
                             <constraint firstItem="dWG-SJ-DmF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rMA-Dt-LKV"/>
                             <constraint firstItem="pxF-Ey-yUQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xrz-bb-aYQ"/>
                         </constraints>
@@ -63,6 +70,7 @@
                     <connections>
                         <outlet property="backBtn" destination="mBD-PH-8ZL" id="QM7-JR-Glf"/>
                         <outlet property="forwardBtn" destination="itB-hR-f04" id="EKv-EI-MAE"/>
+                        <outlet property="indicator" destination="Fwt-XH-uPz" id="0hH-hN-28C"/>
                         <outlet property="searchBar" destination="fIy-lq-Ug4" id="cLS-8w-ODY"/>
                         <outlet property="webView" destination="pxF-Ey-yUQ" id="NDx-Ws-s9y"/>
                     </connections>
